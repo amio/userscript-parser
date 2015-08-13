@@ -2,4 +2,4 @@
 
 Userscript parser.
 
-**Working In Progress**
+Renamed to **[userscript-parser](https://www.npmjs.com/package/userscript-parser)**
