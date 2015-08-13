@@ -1,2 +1,3 @@
 # userscript
+
 Userscript parser.

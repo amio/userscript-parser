@@ -1,0 +1,24 @@
+{
+  "name": "userscript",
+  "version": "0.1.0",
+  "description": "Userscript parser.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/amio/userscript.git"
+  },
+  "keywords": [
+    "userscript",
+    "parser",
+    "meta"
+  ],
+  "author": "Amio <amio.cn@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amio/userscript/issues"
+  },
+  "homepage": "https://github.com/amio/userscript#readme"
+}
