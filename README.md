@@ -1,5 +1,5 @@
-# userscript
+# userscript-parser
 
-Userscript parser.
+Userscript metadata parser.
 
-Renamed to **[userscript-parser](https://www.npmjs.com/package/userscript-parser)**
+**Work In Progress**
