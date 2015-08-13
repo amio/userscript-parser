@@ -1,20 +1,34 @@
 'use strict'
 
-module.exports = {
-  parse: parse,
-  validate: validate,
-}
+module.exports = userscriptParser
 
 /**
  * Userscript format:
  * http://wiki.greasespot.net/Metadata_Block
  */
 
-function parse(userscriptText){
+function userscriptParser (userscriptText) {
   //
-  if(!validate(userscriptText)) throw new Error('Invalid userscript format!')
-}
+  let meta = {}
 
-function validate(userscriptText){
-  //
+  try {
+    const metaBlockPattern = /^[\S\s]+\/\/ ==\/UserScript==/
+    const metaBlock = userscriptText.match(metaBlockPattern)[0]
+    const cleanMeta = metaBlock.replace(/ +/, ' ')
+    const metaArray = cleanMeta.match(/\/\/ @\w+ .+/g)
+
+    metaArray.forEach(function (m) {
+      const parts = m.match(/@(\w+) (.+)/)
+      meta[parts[1]] = meta[parts[1]] || []
+      meta[parts[1]].push(parts[2])
+    })
+
+    meta.content = userscriptText.replace(metaBlockPattern, '')
+
+  } catch(e) {
+    if (console) console.log(e)
+    return false
+  }
+
+  return meta
 }

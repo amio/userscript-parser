@@ -1,10 +1,10 @@
 {
   "name": "userscript",
   "version": "0.0.1",
-  "description": "Userscript parser.",
+  "description": "Userscript metadata parser.",
   "main": "index.js",
   "scripts": {
-    "test": "tape test.js | faucet"
+    "test": "tape test/*.js | faucet"
   },
   "repository": {
     "type": "git",
