@@ -10,17 +10,13 @@ tape.test('parser', function (t) {
 
   const parsed = usp(validUserscript)
   const expected = {
-    description: [
-      'This script even does the laundry!',
-      'Adds a button that lets you download YouTube videos.'
-    ],
+    description: [ 'This script even does the laundry!', ],
     downloadURL: [ 'https://www.example.com/myscript.user.js' ],
-    name: [ 'Download YouTube Videos as MP4' ],
+    name: [ 'Awesome Script' ],
     homepageURL: [ 'https://github.com/gantt/downloadyoutube' ],
     author: [ 'Gantt' ],
     version: [ '1.8.3' ],
     date: [ '2015-05-17' ],
-    namespace: [ 'http://googlesystem.blogspot.com' ],
     include: [ 'http://www.youtube.com/*', 'https://www.youtube.com/*' ],
     exclude: [
       'http://www.youtube.com/embed/*',

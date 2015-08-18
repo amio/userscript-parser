@@ -18,7 +18,7 @@ function userscriptParser (userscriptText) {
     const metaArray = cleanMeta.match(/\/\/ @\w+ .+/g)
 
     metaArray.forEach(function (m) {
-      const parts = m.match(/@(\w+) (.+)/)
+      const parts = m.match(/@(\w+)\s+(.+)/)
       meta[parts[1]] = meta[parts[1]] || []
       meta[parts[1]].push(parts[2])
     })
