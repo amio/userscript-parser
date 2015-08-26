@@ -6,6 +6,7 @@
   "scripts": {
     "test": "tape test/*.js | faucet",
     "preversion": "npm run test",
+    "postversion": "git push; git push --tags; npm publish",
     "patch": "npm version patch -m 'v%s'",
     "minor": "npm version minor -m 'v%s'",
     "major": "npm version major -m 'v%s'"
