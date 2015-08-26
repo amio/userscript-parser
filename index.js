@@ -15,7 +15,7 @@ function userscriptParser (userscriptText) {
     const metaBlockPattern = /^[\S\s]+\/\/ ==\/UserScript==/
     const metaBlock = userscriptText.match(metaBlockPattern)[0]
     const cleanMeta = metaBlock.replace(/ +/, ' ')
-    const metaArray = cleanMeta.match(/\/\/ @\w+ .+/g)
+    const metaArray = cleanMeta.match(/\/\/\s+@\w+ .+/g)
 
     metaArray.forEach(function (m) {
       const parts = m.match(/@(\w+)\s+(.+)/)
