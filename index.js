@@ -9,16 +9,16 @@ module.exports = userscriptParser
 
 function userscriptParser (userscriptText) {
   //
-  let meta = {}
+  var meta = {}
 
   try {
-    const metaBlockPattern = /^[\S\s]+\/\/ ==\/UserScript==/
-    const metaBlock = userscriptText.match(metaBlockPattern)[0]
-    const cleanMeta = metaBlock.replace(/ +/, ' ')
-    const metaArray = cleanMeta.match(/\/\/\s+@\w+ .+/g)
+    var metaBlockPattern = /^[\S\s]+\/\/ ==\/UserScript==/
+    var metaBlock = userscriptText.match(metaBlockPattern)[0]
+    var cleanMeta = metaBlock.replace(/ +/, ' ')
+    var metaArray = cleanMeta.match(/\/\/\s+@\w+ .+/g)
 
     metaArray.forEach(function (m) {
-      const parts = m.match(/@(\w+)\s+(.+)/)
+      var parts = m.match(/@(\w+)\s+(.+)/)
       meta[parts[1]] = meta[parts[1]] || []
       meta[parts[1]].push(parts[2])
     })
@@ -27,7 +27,7 @@ function userscriptParser (userscriptText) {
 
   } catch(e) {
     if (console) console.log(e)
-    return false
+    return {}
   }
 
   return meta
