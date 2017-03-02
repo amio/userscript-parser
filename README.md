@@ -1,5 +1,7 @@
 # userscript-parser
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/amio/userscript-parser.svg)](https://greenkeeper.io/)
+
 Userscript metadata parser.
 
 ## Usage
