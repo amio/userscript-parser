@@ -4,7 +4,7 @@
   "description": "Userscript metadata parser.",
   "main": "index.js",
   "scripts": {
-    "test": "tape test/*.js | faucet",
+    "test": "tape test/parser.js | faucet",
     "preversion": "npm run test",
     "postversion": "git push; git push --tags; npm publish",
     "patch": "npm version patch -m 'v%s'",

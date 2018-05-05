@@ -40,3 +40,8 @@ tape.test('parser', function (t) {
 
   t.end()
 })
+
+tape.test('parse invalid userscript', function (t) {
+  t.equal(usp(''), null)
+  t.end()
+})
