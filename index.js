@@ -4,16 +4,15 @@
  */
 
 module.exports = function extractMetablock (userscriptText) {
-  var meta = {}
-
   try {
-    var metablockReg = /\B\/\/ ==UserScript==\n([\S\s]*?)\n\/\/ ==\/UserScript==/
+    var metablockReg = /\B\/\/ ==UserScript==\n([\S\s]*?)\n\/\/ ==\/UserScript==([\S\s]*)/
     var metablock = userscriptText.match(metablockReg)
     if (!metablock) {
       return null
     }
-    var metaArray = metablock[1].split('\n')
 
+    var meta = {}
+    var metaArray = metablock[1].split('\n')
     metaArray.forEach(function (m) {
       var parts = m.match(/@(\w+)\s+(.+)/)
       if (parts) {
@@ -22,11 +21,14 @@ module.exports = function extractMetablock (userscriptText) {
       }
     })
 
-    meta.content = userscriptText.replace(metablockReg, '')
+    var content = metablock[2]
+
+    return {
+      meta: meta,
+      content: content
+    }
   } catch(e) {
     if (console) console.error(e)
     return null
   }
-
-  return meta
 }

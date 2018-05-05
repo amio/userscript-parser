@@ -8,7 +8,7 @@ Userscript metadata parser.
 var userscriptText = '...'
 var userscriptParser = require('userscript-parser')
 
-var meta = userscriptParser(userscriptText)
+var parsed = userscriptParser(userscriptText)
 ```
 
 Given this userscript:
@@ -37,26 +37,28 @@ Given this userscript:
 var whoami = 'USERSCRIPT'
 ```
 
-will produce this meta object:
+will produce this parsed object:
 
 ```javascript
 {
-  description: [ 'This script even does the laundry!', ],
-  downloadURL: [ 'https://www.example.com/myscript.user.js' ],
-  name: [ 'Awesome Script' ],
-  homepageURL: [ 'https://github.com/gantt/downloadyoutube' ],
-  author: [ 'Gantt' ],
-  version: [ '1.8.3' ],
-  date: [ '2015-05-17' ],
-  include: [ 'https://www.youtube.com/*' ],
-  exclude: [ 'https://www.youtube.com/embed/*' ],
-  match: [
-    'https://www.youtube.com/*',
-    'https://manifest.googlevideo.com/*',
-    'https://*.googlevideo.com/videoplayback*',
-    'https://*.youtube.com/videoplayback*' ],
-  grant: [ 'GM_xmlhttpRequest', 'GM_getValue', 'GM_setValue' ],
-  license: [ 'MIT License' ],
+  meta: {
+    description: [ 'This script even does the laundry!', ],
+    downloadURL: [ 'https://www.example.com/myscript.user.js' ],
+    name: [ 'Awesome Script' ],
+    homepageURL: [ 'https://github.com/gantt/downloadyoutube' ],
+    author: [ 'Gantt' ],
+    version: [ '1.8.3' ],
+    date: [ '2015-05-17' ],
+    include: [ 'https://www.youtube.com/*' ],
+    exclude: [ 'https://www.youtube.com/embed/*' ],
+    match: [
+      'https://www.youtube.com/*',
+      'https://manifest.googlevideo.com/*',
+      'https://*.googlevideo.com/videoplayback*',
+      'https://*.youtube.com/videoplayback*' ],
+    grant: [ 'GM_xmlhttpRequest', 'GM_getValue', 'GM_setValue' ],
+    license: [ 'MIT License' ]
+  },
   content: "\n\nvar whoami = 'USERSCRIPT'\n"
 }
 ```
