@@ -23,6 +23,7 @@ tape.test('parse a valid userscript -> { meta, metablock, content }', function (
     exclude: [ 'https://www.youtube.com/embed/*' ],
     match: [ 'https://www.youtube.com/*' ],
     grant: [ 'GM_xmlhttpRequest', 'GM_getValue', 'GM_setValue' ],
+    'run-at': [ 'document-end' ],
     license: [ 'MIT License' ]
   })
   t.equal(result.metablock.trim(), `// ==UserScript==

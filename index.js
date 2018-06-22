@@ -19,7 +19,7 @@ module.exports = function extractMetablock (userscriptText) {
     var meta = {}
     var metaArray = metas.split('\n')
     metaArray.forEach(function (m) {
-      var parts = m.match(/@(\w+)\s+(.+)/)
+      var parts = m.match(/@([\w-]+)\s+(.+)/)
       if (parts) {
         meta[parts[1]] = meta[parts[1]] || []
         meta[parts[1]].push(parts[2])

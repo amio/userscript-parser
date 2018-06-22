@@ -50,6 +50,7 @@ will produce this parsed object:
     exclude: [ 'https://www.youtube.com/embed/*' ],
     match: [ 'https://www.youtube.com/*' ],
     grant: [ 'GM_xmlhttpRequest', 'GM_getValue', 'GM_setValue' ],
+    'run-at': [ 'document-end' ],
     license: [ 'MIT License' ]
   },
   metablock: "// ==UserScript==...",
