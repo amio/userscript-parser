@@ -5,14 +5,19 @@
 
 module.exports = function extractMetablock (userscriptText) {
   try {
-    var metablockReg = /\B\/\/ ==UserScript==\n([\S\s]*?)\n\/\/ ==\/UserScript==([\S\s]*)/
-    var metablock = userscriptText.match(metablockReg)
-    if (!metablock) {
+    var blocksReg = /\B(\/\/ ==UserScript==\n([\S\s]*?)\n\/\/ ==\/UserScript==)([\S\s]*)/
+    var blocks = userscriptText.match(blocksReg)
+
+    if (!blocks) {
       return null
     }
 
+    var metablock = blocks[1]
+    var metas = blocks[2]
+    var code = blocks[3]
+
     var meta = {}
-    var metaArray = metablock[1].split('\n')
+    var metaArray = metas.split('\n')
     metaArray.forEach(function (m) {
       var parts = m.match(/@(\w+)\s+(.+)/)
       if (parts) {
@@ -21,12 +26,10 @@ module.exports = function extractMetablock (userscriptText) {
       }
     })
 
-    var content = metablock[2]
-
     return {
       meta: meta,
       metablock: metablock,
-      content: content
+      content: code
     }
   } catch(e) {
     if (console) console.error(e)

@@ -16,4 +16,4 @@
 // @license     MIT License
 // ==/UserScript==
 
-var whoami = 'USERSCRIPT'
+var whoami = "USERSCRIPT"
