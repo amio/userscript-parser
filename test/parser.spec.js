@@ -14,11 +14,7 @@ const validResult = {
     date: [ '2015-05-17' ],
     include: [ 'https://www.youtube.com/*' ],
     exclude: [ 'https://www.youtube.com/embed/*' ],
-    match: [
-      'https://www.youtube.com/*',
-      'https://manifest.googlevideo.com/*',
-      'https://*.googlevideo.com/videoplayback*',
-      'https://*.youtube.com/videoplayback*' ],
+    match: [ 'https://www.youtube.com/*' ],
     grant: [ 'GM_xmlhttpRequest', 'GM_getValue', 'GM_setValue' ],
     license: [ 'MIT License' ]
   },

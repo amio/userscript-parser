@@ -9,9 +9,6 @@
 // @include     https://www.youtube.com/*
 // @exclude     https://www.youtube.com/embed/*
 // @match       https://www.youtube.com/*
-// @match       https://manifest.googlevideo.com/*
-// @match       https://*.googlevideo.com/videoplayback*
-// @match       https://*.youtube.com/videoplayback*
 // @grant       GM_xmlhttpRequest
 // @grant       GM_getValue
 // @grant       GM_setValue
