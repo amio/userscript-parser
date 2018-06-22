@@ -25,6 +25,7 @@ module.exports = function extractMetablock (userscriptText) {
 
     return {
       meta: meta,
+      metablock: metablock,
       content: content
     }
   } catch(e) {
