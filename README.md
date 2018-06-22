@@ -1,14 +1,14 @@
-# userscript-parser
+# userscript-parser [![npm-version][npm-badge]][npm-link] [![install size][pp-badge]][pp-link]
 
 Userscript metadata parser.
 
 ## Usage
 
 ```javascript
-var userscriptText = '...'
-var userscriptParser = require('userscript-parser')
+const userscriptText = '// ==UserScript==...'
+const usp = require('userscript-parser')
 
-var parsed = userscriptParser(userscriptText)
+const { meta, metablock, content } = usp(userscriptText)
 ```
 
 Given this userscript:
@@ -24,9 +24,6 @@ Given this userscript:
 // @include     https://www.youtube.com/*
 // @exclude     https://www.youtube.com/embed/*
 // @match       https://www.youtube.com/*
-// @match       https://manifest.googlevideo.com/*
-// @match       https://*.googlevideo.com/videoplayback*
-// @match       https://*.youtube.com/videoplayback*
 // @grant       GM_xmlhttpRequest
 // @grant       GM_getValue
 // @grant       GM_setValue
@@ -51,14 +48,20 @@ will produce this parsed object:
     date: [ '2015-05-17' ],
     include: [ 'https://www.youtube.com/*' ],
     exclude: [ 'https://www.youtube.com/embed/*' ],
-    match: [
-      'https://www.youtube.com/*',
-      'https://manifest.googlevideo.com/*',
-      'https://*.googlevideo.com/videoplayback*',
-      'https://*.youtube.com/videoplayback*' ],
+    match: [ 'https://www.youtube.com/*' ],
     grant: [ 'GM_xmlhttpRequest', 'GM_getValue', 'GM_setValue' ],
     license: [ 'MIT License' ]
   },
+  metablock: "// ==UserScript==...",
   content: "\n\nvar whoami = 'USERSCRIPT'\n"
 }
 ```
+
+## License
+
+MIT @ Amio
+
+[npm-badge]: https://img.shields.io/npm/v/userscript-parser.svg
+[npm-link]: https://www.npmjs.com/package/userscript-parser
+[pp-badge]: https://packagephobia.now.sh/badge?p=userscript-parser
+[pp-link]: https://packagephobia.now.sh/result?p=userscript-parser
