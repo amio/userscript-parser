@@ -62,7 +62,7 @@ will produce this parsed object:
 
 MIT @ Amio
 
-[npm-badge]: https://img.shields.io/npm/v/userscript-parser.svg
+[npm-badge]: https://badgen.net/npm/v/userscript-parser
 [npm-link]: https://www.npmjs.com/package/userscript-parser
-[pp-badge]: https://packagephobia.now.sh/badge?p=userscript-parser
+[pp-badge]: https://badgen.net/packagephobia/publish/userscript-parser
 [pp-link]: https://packagephobia.now.sh/result?p=userscript-parser
