@@ -5,7 +5,7 @@
 
 module.exports = function extractMetablock (userscriptText) {
   try {
-    var blocksReg = /\B(\/\/ ==UserScript==\n([\S\s]*?)\n\/\/ ==\/UserScript==)([\S\s]*)/
+    var blocksReg = /\B(\/\/ ==UserScript==\r?\n([\S\s]*?)\r?\n\/\/ ==\/UserScript==)([\S\s]*)/
     var blocks = userscriptText.match(blocksReg)
 
     if (!blocks) {
