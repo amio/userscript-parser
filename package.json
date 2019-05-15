@@ -1,6 +1,6 @@
 {
   "name": "userscript-parser",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "Userscript metadata parser.",
   "main": "index.js",
   "scripts": {
